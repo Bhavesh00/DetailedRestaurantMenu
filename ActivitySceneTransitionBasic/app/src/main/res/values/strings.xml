@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Google LLC
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">ActivitySceneTransitionBasic</string>
+
+    <string name="carne_asada">Carne Asada</string>
+    <string name="carne_asada_desc">8oz of Tender Grilled Skirt Steak\nServed with rice, beans, salad, avocado, and Fresh Handmade Tortillas.</string>
+    <string name="tampiquena_desc">8oz of Tender Grilled Skirt Steak Served with a salsa verde Cheese Enchilada, rice, beans, guacamole, and Fresh Handmade Tortillas.</string>
+    <string name="tampiquena">Tampiqueña</string>
+    <string name="mega_tiacoyo">MEGA Tiacoyo with Carne Asada</string>
+    <string name="mega_desc">A flavorful mega blue corn tlacoyo stuffed with refried beans and topped with and 8oz Strip of carne asada, melted cheese, aged cheese, onions, cilantro, and sour cream.</string>
+    <string name="fajitas">Fajitas de Pollo o Res</string>
+    <string name="fajitas_desc">Chicken or Steak Fajitas Sauteed onion, tomato, green bell pepper and served with rice, beans, salad, avocado, sour cream and Fresh Handmade Tortillas.</string>
+    <string name="milanesa">Milanesa de Pollo o Res</string>
+    <string name="milanesa_desc">Breaded Steak or Breaded Chicken Breast Served with rice, beans, salad, avocado, and Fresh Handmade Tortillas - add Grilled Cheese $1.50</string>
+    <string name="pechuga_en_salsa">Pechuga en Salsa Chipotle</string>
+    <string name="pechuaga_en_salsa_desc">8oz of tenderized grilled chicken breast topped with melted cheese and a delicious mild chipotle sauce Served w/ Rice, Beans, Salad, Avocado, and Fresh Handmade Tortillas.</string>
+    <string name="pechuga_plancha">Pechuga a la Plancha</string>
+    <string name="pechuga_plancha_desc">8oz of tenderized grilled chicken breast Served w/ Rice, Beans, Salad, Avocado, and Fresh Handmade Tortillas.</string>
+    <string name="enchiladas">Enchiladas en Salsa Verde</string>
+    <string name="enchiladas_desc"><![CDATA[Three handmade enchiladas filled with cheese choice of chicken or zucchini blossom and topped with house-made salsa verde, melted cheese, served with rice & beans.]]></string>
+    <string name="flautas">Flautas</string>
+    <string name="flautas_desc">Fried Rolled Tacos Choice of Carne Asada, Chicken, Chorizo mix with cheese or Potato mixed with cheese. Served with guacamole, pico de gallo, lettuce, sour cream, aged cheese, rice and beans.</string>
+<!--    <string name="entrees">ENTREES</string>-->
+<!--    <string name="starters">STARTERS</string>-->
+    <string name="guacamole_desc">Served with Chips Lg $8 Sm $4.50</string>
+    <string name="guacamole">Guacamole</string>
+    <string name="queso_fundido">Queso Fundido</string>
+    <string name="queso_fundido_desc"><![CDATA[Melted Cheese w/ Choice of steak, chicken, chorizo, Mushrooms, zucchini blossoms & Hand Made Tortillas]]></string>
+    <string name="nachos">Nachos</string>
+    <string name="nachos_desc">Choice of carne asada $1 Extra, chicken, al pastor, chorizo or no meat topped with beans, cheese, sour cream, pico de gallo and guacamole. Half order $6</string>
+<!--    <string name="tacos">TACOS</string>-->
+<!--    <string name="desserts">DESSERTS</string>-->
+<!--    <string name="coktails">COKTAILS</string>-->
+    <string name="taco_americano">Taco Americano</string>
+    <string name="taco_americano_desc">Lettuce Tomato and Cheese Carne Asada, Chicken, Pastor, or Chorizo.</string>
+    <string name="taco_mexica">Taco Mexica</string>
+    <string name="taco_mexica_desc"><![CDATA[Taco w/ Grilled Cheese, Onion & Cilantro Carne Asada (Steak), Chicken, Pastor (Pork), or Chorizo (Mexican Sausage)]]></string>
+    <string name="taco_de_lomo">Taco de Lomo</string>
+    <string name="taco_de_lomo_desc">Rib Eye Taco w/ Onion and Cilantro</string>
+    <string name="taco_de_pescado">Taco de Pescado</string>
+    <string name="taco_de_pescado_desc">Grilled Fish Taco Topped w/ Onion and Cilantro</string>
+    <string name="taco_campesino">Taco Campesino</string>
+    <string name="taco_campesino_desc">a Large Loaded Taco with a Choice of Meat Carne Asada, Chicken, Pastor, Chorizo or Veggie.</string>
+    <string name="taco_veggie">Taco Veggie</string>
+    <string name="taco_veggie_desc">Rice, Beans, Lettuce, Tomato, Avocado and Cheese</string>
+    <string name="fresh_lime_margarita">Fresh Lime Margarita</string>
+    <string name="fresh_lime_margarita_desc">Piedra Azul Tequila, Triple Sec, Lime Juice, Agave Nectar, Orange Juice $6.50</string>
+    <string name="paloma">Paloma</string>
+    <string name="paloma_desc">Piedra Azul Tequila, Lime Juice, Grapefruit Juice, Agave Nectar, Squirt</string>
+    <string name="russo_mexicano">Russo Mexicano</string>
+    <string name="russo_mexicano_desc">Our take on a white Russian made with Patron Cafe, Rompope Vanilla Liqueur, horchata, and cold brew coffee.</string>
+    <string name="seasonal_margarita_avacado">Seasonal Margarita - Avacado</string>
+    <string name="seasonal_margarita_avacado_desc">El Mayor Reposado, triple sec, fresh lime juice, avocado, cilantro, pepper, agave nectar.</string>
+    <string name="seasonal_margarita_blackberry_mint">Seasonal Margarita - Blackberry Mint</string>
+    <string name="seasonal_margarita_blackberry_mint_desc"><![CDATA[Piedra Azul Blanco, triple sec, fresh blackberries & mint, lime juice, agave nectar.]]></string>
+    <string name="mango_habanero">Mango Habanero</string>
+    <string name="mango_habanero_desc">Piedra Azul Blanco, triple sec, Jumex Mango, fresh habaneros, lime juice, agave nectar.</string>
+    <string name="seasonal_margarita_watermelon">Seasonal Margarita - Watermelon</string>
+    <string name="seasonal_margarita_watermelon_desc">Piedra Azul Blanco, triple sec, house-made watermelon water, lime juice, agave nectar, topped with soda water.</string>
+    <string name="flan">Flan</string>
+    <string name="flan_desc"><![CDATA[A baked custard made with condensed milk, eggs, and caramelized sugar with hints of orange & lime.]]></string>
+    <string name="paletas">Paletas</string>
+    <string name="paletas_desc"><![CDATA[Fresh & delicious seasonal popsicles from flavors ranging from creamy avocado to refreshing watermelon.]]></string>
+
+</resources>
