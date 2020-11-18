@@ -46,10 +46,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.grid);
 
         // Setup the GridView and set the adapter
-        GridView grid = findViewById(R.id.grid);
+        GridView grid = findViewById(R.id.grid_starter);
+        GridView grid2 = findViewById(R.id.grid_entree);
+        GridView grid3 = findViewById(R.id.grid_taco);
+        GridView grid4 = findViewById(R.id.grid_cocktail);
+        GridView grid5 = findViewById(R.id.grid_dessert);
         grid.setOnItemClickListener(mOnItemClickListener);
-        GridAdapter adapter = new GridAdapter();
+        grid2.setOnItemClickListener(mOnItemClickListener);
+        grid3.setOnItemClickListener(mOnItemClickListener);
+        grid4.setOnItemClickListener(mOnItemClickListener);
+        grid5.setOnItemClickListener(mOnItemClickListener);
+        GridAdapter adapter = new GridAdapter(R.string.starters);
+        GridAdapter adapter2 = new GridAdapter(R.string.entrees);
+        GridAdapter adapter3 = new GridAdapter(R.string.tacos);
+        GridAdapter adapter4 = new GridAdapter(R.string.coktails);
+        GridAdapter adapter5 = new GridAdapter(R.string.desserts);
         grid.setAdapter(adapter);
+        grid2.setAdapter(adapter2);
+        grid3.setAdapter(adapter3);
+        grid4.setAdapter(adapter4);
+        grid5.setAdapter(adapter5);
     }
 
     private final AdapterView.OnItemClickListener mOnItemClickListener
@@ -95,14 +111,29 @@ public class MainActivity extends AppCompatActivity {
      */
     private class GridAdapter extends BaseAdapter {
 
+        int type;
+        public GridAdapter(int foodtype) {
+            type = foodtype;
+        }
+
         @Override
         public int getCount() {
-            return Item.ITEMS.length;
+            int total_type = 0;
+            for (int i = 0; i < Item.ITEMS.length; i++) {
+                if (type == Item.ITEMS[i].getMtype()) {
+                    total_type++;
+                }
+            }
+            return total_type;
         }
 
         @Override
         public Item getItem(int position) {
-            return Item.ITEMS[position];
+            int i = 0;
+            while (type != Item.ITEMS[i].getMtype()) {
+                i++;;
+            }
+            return Item.ITEMS[position+i];
         }
 
         @Override
@@ -117,32 +148,35 @@ public class MainActivity extends AppCompatActivity {
             }
 
             final Item item = getItem(position);
+            if (item.getMtype() == type) {
+                // Load the thumbnail image
+                ImageView image = view.findViewById(R.id.food_image);
+                Picasso.with(image.getContext()).load(item.getThumbnail()).into(image);
 
-            // Load the thumbnail image
-            ImageView image = view.findViewById(R.id.food_image);
-            Picasso.with(image.getContext()).load(item.getThumbnail()).into(image);
+                if (item.getFoodLabels() != null) {
+                    ImageView[] labels = new ImageView[item.getFoodLabelCount()];
+                    for (int i = 0; i < item.getFoodLabelCount(); i++) {
+                        if (i == 0) {
+                            labels[i] = view.findViewById(R.id.food_label_1);
+                        } else {
+                            labels[i] = view.findViewById(R.id.food_label_2);
 
-            if (item.getFoodLabels() != null) {
-                ImageView[] labels = new ImageView[item.getFoodLabelCount()];
-                for (int i = 0; i < item.getFoodLabelCount(); i++) {
-                    if (i == 0) {
-                        labels[i] = view.findViewById(R.id.food_label_1);
-                    } else {
-                        labels[i] = view.findViewById(R.id.food_label_2);
-
+                        }
+                        Picasso.with(labels[i].getContext()).load(item.getFoodLabels()[i]).into(labels[i]);
                     }
-                    Picasso.with(labels[i].getContext()).load(item.getFoodLabels()[i]).into(labels[i]);
                 }
+
+                // Set the TextView's contents
+                TextView name = view.findViewById(R.id.food_name);
+                name.setText(item.getName());
+
+                TextView price = view.findViewById(R.id.price);
+                price.setText(item.getPrice());
+
+
             }
-
-            // Set the TextView's contents
-            TextView name = view.findViewById(R.id.food_name);
-            name.setText(item.getName());
-
-            TextView price = view.findViewById(R.id.price);
-            price.setText(item.getPrice());
-
             return view;
+
         }
     }
 }
