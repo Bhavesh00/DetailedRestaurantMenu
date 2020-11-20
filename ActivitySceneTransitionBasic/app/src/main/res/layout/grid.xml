@@ -13,112 +13,169 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    android:orientation="vertical"
+    tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:id="@+id/starter_head"
+        android:weightSum="5"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/starters_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/starters"
-            android:textSize="30sp"
-            android:gravity="center_horizontal"/>
-        <GridView
-            android:id="@+id/grid_starter"
-            android:layout_width="match_parent"
-            android:layout_height="480dp"
-            android:clipToPadding="false"
-            android:columnWidth="180dp"
-            android:drawSelectorOnTop="true"
-            android:horizontalSpacing="@dimen/grid_spacing"
-            android:numColumns="auto_fit"
-            android:padding="@dimen/grid_spacing"
-            android:verticalSpacing="@dimen/grid_spacing"
-            tools:ignore="NestedScrolling"/>
-        <TextView
-            android:id="@+id/entree_head"
+            android:layout_weight="1"
+            android:textSize="11sp"
+            android:text="Starters" />
+        <Button
+            android:id="@+id/entrees_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/entrees"
-            android:textSize="30sp"
-            android:gravity="center_horizontal"/>
-        <GridView
-            android:id="@+id/grid_entree"
-            android:layout_width="match_parent"
-            android:layout_height="1180dp"
-            android:clipToPadding="false"
-            android:columnWidth="180dp"
-            android:drawSelectorOnTop="true"
-            android:horizontalSpacing="@dimen/grid_spacing"
-            android:numColumns="auto_fit"
-            android:padding="@dimen/grid_spacing"
-            android:verticalSpacing="@dimen/grid_spacing"
-            tools:ignore="NestedScrolling"/>
-        <TextView
-            android:id="@+id/taco_head"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/tacos"
-            android:textSize="30sp"
-            android:gravity="center_horizontal"/>
-        <GridView
-            android:id="@+id/grid_taco"
-            android:layout_width="match_parent"
-            android:layout_height="730dp"
-            android:clipToPadding="false"
-            android:columnWidth="180dp"
-            android:drawSelectorOnTop="true"
-            android:horizontalSpacing="@dimen/grid_spacing"
-            android:numColumns="auto_fit"
-            android:padding="@dimen/grid_spacing"
-            android:verticalSpacing="@dimen/grid_spacing"
-            tools:ignore="NestedScrolling"/>
-        <TextView
-            android:id="@+id/cocktail_head"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/coktails"
-            android:textSize="30sp"
-            android:gravity="center_horizontal"/>
-        <GridView
-            android:id="@+id/grid_cocktail"
-            android:layout_width="match_parent"
-            android:layout_height="980dp"
-            android:clipToPadding="false"
-            android:columnWidth="180dp"
-            android:drawSelectorOnTop="true"
-            android:horizontalSpacing="@dimen/grid_spacing"
-            android:numColumns="auto_fit"
-            android:padding="@dimen/grid_spacing"
-            android:verticalSpacing="@dimen/grid_spacing"
-            tools:ignore="NestedScrolling"/>
-        <TextView
-            android:id="@+id/dessert_head"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/desserts"
-            android:textSize="30sp"
-            android:gravity="center_horizontal"/>
-        <GridView
-            android:id="@+id/grid_dessert"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:clipToPadding="false"
-            android:columnWidth="180dp"
-            android:drawSelectorOnTop="true"
-            android:horizontalSpacing="@dimen/grid_spacing"
-            android:numColumns="auto_fit"
-            android:padding="@dimen/grid_spacing"
-            android:verticalSpacing="@dimen/grid_spacing"
-            tools:ignore="NestedScrolling"/>
+            android:layout_weight="1"
+            android:textSize="11sp"
+            android:text="Entrees" />
+        <Button
+            android:id="@+id/tacos_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="11sp"
+            android:text="Tacos" />
+        <Button
+            android:id="@+id/cocktails_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="Cocktails" />
+        <Button
+            android:id="@+id/desserts_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="11sp"
+            android:text="Desserts" />
     </LinearLayout>
-</ScrollView>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/starter_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/starters"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/grid_starter"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:clipToPadding="false"
+                android:columnWidth="180dp"
+                android:drawSelectorOnTop="true"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:numColumns="auto_fit"
+                android:padding="@dimen/grid_spacing"
+                android:verticalSpacing="@dimen/grid_spacing"
+                tools:ignore="NestedScrolling" />
+
+            <TextView
+                android:id="@+id/entree_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/entrees"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/grid_entree"
+                android:layout_width="match_parent"
+                android:layout_height="1180dp"
+                android:clipToPadding="false"
+                android:columnWidth="180dp"
+                android:drawSelectorOnTop="true"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:numColumns="auto_fit"
+                android:padding="@dimen/grid_spacing"
+                android:verticalSpacing="@dimen/grid_spacing"
+                tools:ignore="NestedScrolling" />
+
+            <TextView
+                android:id="@+id/taco_head"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="@string/tacos"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/grid_taco"
+                android:layout_width="match_parent"
+                android:layout_height="730dp"
+                android:clipToPadding="false"
+                android:columnWidth="180dp"
+                android:drawSelectorOnTop="true"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:numColumns="auto_fit"
+                android:padding="@dimen/grid_spacing"
+                android:verticalSpacing="@dimen/grid_spacing"
+                tools:ignore="NestedScrolling" />
+
+            <TextView
+                android:id="@+id/cocktail_head"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="@string/cocktails"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/grid_cocktail"
+                android:layout_width="match_parent"
+                android:layout_height="980dp"
+                android:clipToPadding="false"
+                android:columnWidth="180dp"
+                android:drawSelectorOnTop="true"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:numColumns="auto_fit"
+                android:padding="@dimen/grid_spacing"
+                android:verticalSpacing="@dimen/grid_spacing"
+                tools:ignore="NestedScrolling" />
+
+            <TextView
+                android:id="@+id/dessert_head"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="@string/desserts"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/grid_dessert"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:clipToPadding="false"
+                android:columnWidth="180dp"
+                android:drawSelectorOnTop="true"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:numColumns="auto_fit"
+                android:padding="@dimen/grid_spacing"
+                android:verticalSpacing="@dimen/grid_spacing"
+                tools:ignore="NestedScrolling" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
 

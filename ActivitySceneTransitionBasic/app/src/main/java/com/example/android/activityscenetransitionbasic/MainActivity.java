@@ -16,14 +16,17 @@
 
 package com.example.android.activityscenetransitionbasic;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,13 +62,36 @@ public class MainActivity extends AppCompatActivity {
         GridAdapter adapter = new GridAdapter(R.string.starters);
         GridAdapter adapter2 = new GridAdapter(R.string.entrees);
         GridAdapter adapter3 = new GridAdapter(R.string.tacos);
-        GridAdapter adapter4 = new GridAdapter(R.string.coktails);
+        GridAdapter adapter4 = new GridAdapter(R.string.cocktails);
         GridAdapter adapter5 = new GridAdapter(R.string.desserts);
         grid.setAdapter(adapter);
         grid2.setAdapter(adapter2);
         grid3.setAdapter(adapter3);
         grid4.setAdapter(adapter4);
         grid5.setAdapter(adapter5);
+
+        // Menu Nav Bar
+        ScrollView scroll_view = findViewById(R.id.scroll_view);
+        @SuppressLint("WrongViewCast") final Button starters_button = findViewById(R.id.starters_button);
+        starters_button.setOnClickListener(v -> {
+            scroll_view.smoothScrollTo(0, ((findViewById(R.id.starter_head)).getTop()));
+        });
+        @SuppressLint("WrongViewCast") final Button entrees_button = findViewById(R.id.entrees_button);
+        entrees_button.setOnClickListener(v -> {
+            scroll_view.smoothScrollTo(0, ((findViewById(R.id.entree_head)).getTop()));
+        });
+        @SuppressLint("WrongViewCast") final Button tacos_button = findViewById(R.id.tacos_button);
+        tacos_button.setOnClickListener(v -> {
+            scroll_view.smoothScrollTo(0, ((findViewById(R.id.taco_head)).getTop()));
+        });
+        @SuppressLint("WrongViewCast") final Button cocktails_button = findViewById(R.id.cocktails_button);
+        cocktails_button.setOnClickListener(v -> {
+            scroll_view.smoothScrollTo(0, ((findViewById(R.id.cocktail_head)).getTop()));
+        });
+        @SuppressLint("WrongViewCast") final Button desserts_button = findViewById(R.id.desserts_button);
+        desserts_button.setOnClickListener(v -> {
+            scroll_view.smoothScrollTo(0, ((findViewById(R.id.dessert_head)).getTop()));
+        });
     }
 
     private final AdapterView.OnItemClickListener mOnItemClickListener
