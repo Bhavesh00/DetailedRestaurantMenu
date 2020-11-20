@@ -73,8 +73,8 @@
 
             <TextView
                 android:id="@+id/starter_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:text="@string/starters"
                 android:textSize="30sp" />
@@ -94,8 +94,8 @@
 
             <TextView
                 android:id="@+id/entree_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:text="@string/entrees"
                 android:textSize="30sp" />
