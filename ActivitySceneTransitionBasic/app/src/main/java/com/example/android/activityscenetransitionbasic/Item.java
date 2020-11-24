@@ -85,6 +85,16 @@ public class Item {
         mFoodLabels = labels;
     }
 
+    Item(Item i) {
+        mtype = i.mtype;
+        mName = i.mName;
+        mFoodImage = i.mFoodImage;
+        mPrice = i.mPrice;
+        mDescription = i.mDescription;
+        mNutrition = i.mNutrition;
+        mFoodLabels = i.mFoodLabels;
+    }
+
     public int getMtype() { return mtype; }
 
     public int getId() {

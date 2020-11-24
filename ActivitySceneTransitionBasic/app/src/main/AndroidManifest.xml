@@ -36,6 +36,7 @@
         </activity>
 
         <activity android:name=".DetailActivity" />
+        <activity android:name=".SearchActivity" />
 
     </application>
 

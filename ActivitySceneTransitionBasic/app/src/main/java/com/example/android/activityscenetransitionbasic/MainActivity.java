@@ -21,6 +21,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -223,6 +224,34 @@ public class MainActivity extends AppCompatActivity {
                 (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.i("Testing Query", "Success");
+                callSearch(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //              if (searchView.isExpanded() && TextUtils.isEmpty(newText)) {
+                //Log.i("Testing Query", "Success");
+                //callSearch(newText);
+                //
+                return true;
+            }
+
+            public void callSearch(String query) {
+                //Do searching
+                Log.i("Home search Query: ", query);
+                SearchActivity.setQuery(query);
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+                // Transition to SearchActivity
+            }
+
+        });
 
         return true;
     }

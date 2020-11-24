@@ -16,11 +16,13 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <com.example.android.activityscenetransitionbasic.SquareFrameLayout
+        android:id="@+id/square"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -44,6 +46,7 @@
         android:textSize="15sp"/>
 
     <LinearLayout
+        android:id="@+id/label_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
