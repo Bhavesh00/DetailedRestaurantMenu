@@ -218,12 +218,6 @@ public class SearchActivity extends AppCompatActivity {
             }
 
 
-
-
-            // getResources().getDrawable(R.drawable.myimage, getApplicationContext().getTheme())
-
-
-
             holder.ll_container.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
