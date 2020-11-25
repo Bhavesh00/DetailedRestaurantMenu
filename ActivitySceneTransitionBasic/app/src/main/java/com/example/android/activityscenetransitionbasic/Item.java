@@ -130,6 +130,9 @@ public class Item {
     }
 
     public int getFoodLabelCount() {
+        if (mFoodLabels == null) {
+            return 0;
+        }
         return mFoodLabels.length;
     }
 }

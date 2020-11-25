@@ -27,12 +27,14 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +50,7 @@ import com.squareup.picasso.Picasso;
  * framework to animatedly do so.
  */
 public class MainActivity extends AppCompatActivity {
+    private static String food_label;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
         desserts_button.setOnClickListener(v -> {
             scroll_view.smoothScrollTo(0, ((findViewById(R.id.dessert_head)).getTop()));
         });
+
+        // Food Labels Drop-Down Filter
+        Spinner food_labels_spinner = findViewById(R.id.food_labels_spinner);
+        ArrayAdapter<CharSequence> spinner_adapter = ArrayAdapter.createFromResource(this,
+                R.array.food_labels, android.R.layout.simple_spinner_dropdown_item);
+        food_labels_spinner.setAdapter(spinner_adapter);
+        food_labels_spinner.setOnItemSelectedListener(mOnItemSelectedListener);
     }
 
     private final AdapterView.OnItemClickListener mOnItemClickListener
@@ -210,6 +220,50 @@ public class MainActivity extends AppCompatActivity {
             return view;
 
         }
+    }
+    private final AdapterView.OnItemSelectedListener mOnItemSelectedListener
+            = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            String[] food_labels_arr = getResources().getStringArray(R.array.food_labels);
+            food_label = food_labels_arr[pos];
+            // user still on "filter" text option
+            if (pos == 0) {
+                food_label = "";
+                return;
+            }
+            // search bar blank
+            SearchActivity.setQuery("");
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            startActivity(intent);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    };
+    public static String getFoodLabel() {
+        // Names on UI and in drawable files differ
+        switch(food_label) {
+            case "Vegan":
+            case "vegan":
+                food_label = "vegan";
+                break;
+            case "Gluten Free":
+            case "gluten_free":
+                food_label = "gluten_free";
+                break;
+            case "Dairy Free":
+            case "dairy_free":
+                food_label = "dairy_free";
+                break;
+            default:
+                Log.i("m","executed");
+                food_label = "";
+        }
+
+        return food_label;
     }
 
     @Override
