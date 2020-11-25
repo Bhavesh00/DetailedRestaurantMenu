@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,8 +33,6 @@ import androidx.core.util.Pair;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
-    private LinearLayout llContainer;
-    private EditText etSearch;
     private ListView lvProducts;
     private ArrayList<Item> mProductArrayList = new ArrayList<Item>();
     private MyAdapter adapter1;
@@ -52,7 +51,7 @@ public class SearchActivity extends AppCompatActivity {
         mProductArrayList.add(new Item(R.string.starters,R.string.nachos, R.drawable.nachos, R.string.nachos_desc, R.string.eleven_dollar));
         mProductArrayList.add(new Item(R.string.entrees, R.string.carne_asada,R.drawable.carne_asada, R.string.carne_asada_desc,R.string.sixteen_dollar,  new int[] {R.drawable.dairy_free}));
         mProductArrayList.add(new Item(R.string.entrees, R.string.tampiquena, R.drawable.tampiquena, R.string.tampiquena_desc, R.string.sixteen_dollar));
-        mProductArrayList.add(new Item(R.string.entrees, R.string.mega_desc, R.drawable.mega_tiacoyo, R.string.mega_desc, R.string.fiften_dollar));
+        mProductArrayList.add(new Item(R.string.entrees, R.string.mega_tiacoyo, R.drawable.mega_tiacoyo, R.string.mega_desc, R.string.fiften_dollar));
         mProductArrayList.add(new Item(R.string.entrees, R.string.fajitas,R.drawable.fajitas_de_pollo_o_res, R.string.fajitas_desc, R.string.fiften_dollar));
         mProductArrayList.add(new Item(R.string.entrees, R.string.milanesa, R.drawable.milanesas, R.string.milanesa_desc, R.string.fiften_dollar, new int[] {R.drawable.dairy_free}));
         mProductArrayList.add(new Item(R.string.entrees, R.string.pechuga_en_salsa, R.drawable.pechugas_en_salsa_chipotle, R.string.pechuaga_en_salsa_desc, R.string.fiften_dollar));
@@ -274,39 +273,58 @@ public class SearchActivity extends AppCompatActivity {
                         mOriginalValues = new ArrayList<Item>(mDisplayedValues); // saves the original data in mOriginalValues
                     }
 
-                    /********
-                     *
-                     *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
-                     *  else does the Filtering and returns FilteredArrList(Filtered)
-                     *
-                     ********/
-                    if (constraint == null || constraint.length() == 0) {
-
-                        // set the Original result to return
-                        results.count = mOriginalValues.size();
-                        results.values = mOriginalValues;
-
-                    } else {
+//                    /********
+//                     *
+//                     *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
+//                     *  else does the Filtering and returns FilteredArrList(Filtered)
+//                     *
+//                     ********/
+//                    Log.i("m","value: " + constraint);
+//                    if (constraint == null || constraint.length() == 0) {
+//
+//                        // set the Original result to return
+//                        Log.i("m","sucker");
+//                        results.count = mOriginalValues.size();
+//                        results.values = mOriginalValues;
+//
+//                    } else {
                         constraint = constraint.toString().toLowerCase();
                         for (int i = 0; i < mOriginalValues.size(); i++) {
                             String data = getResources().getString(mOriginalValues.get(i).getName()); // This gets the string from the R.string.*
 
                             if (data.toLowerCase().contains(constraint.toString())) {
-                                FilteredArrList.add(new Item(Item.getItem(mOriginalValues.get(i).getId())));
+                                if (ToAdd(i)) {
+                                    FilteredArrList.add(new Item(Item.getItem(mOriginalValues.get(i).getId())));
+                                }
                             }
                         }
                         // set the Filtered result to return
                         results.count = FilteredArrList.size();
                         //Log.i("Check Results Size: ", String.valueOf(results.count));
                         results.values = FilteredArrList;
-                    }
+                    //}
                     return results;
                 }
             };
             return filter;
         }
+        public boolean ToAdd(int i) {
+            if (MainActivity.getFoodLabel().length() != 0) {
+                Log.i("m", String.valueOf(mOriginalValues.get(i).getFoodLabelCount()));
+                for (int j = 0; j < mOriginalValues.get(i).getFoodLabelCount(); ++j) {
+                    String food_label = getResources().getResourceEntryName(mOriginalValues.get(i).getFoodLabels()[j]);
+                    Log.i("m", MainActivity.getFoodLabel());
+                    Log.i("m", food_label);
+                    if (MainActivity.getFoodLabel().equals(food_label)) {
+                        return true;
+                    }
+                }
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
-
 }
 
 

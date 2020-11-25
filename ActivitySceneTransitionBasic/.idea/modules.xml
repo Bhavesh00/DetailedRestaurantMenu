@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LastAppbender.ActivitySceneTransitionBasic.iml" filepath="$PROJECT_DIR$/.idea/modules/LastAppbender.ActivitySceneTransitionBasic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LastAppbender.ActivitySceneTransitionBasic.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LastAppbender.ActivitySceneTransitionBasic.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ActivitySceneTransitionBasic.iml" filepath="$PROJECT_DIR$/.idea/modules/ActivitySceneTransitionBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ActivitySceneTransitionBasic.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ActivitySceneTransitionBasic.app.iml" />
     </modules>
   </component>
 </project>

@@ -11,7 +11,7 @@ public class Item {
             new Item(R.string.starters,R.string.nachos, R.drawable.nachos, R.string.nachos_desc, R.string.eleven_dollar),
             new Item(R.string.entrees, R.string.carne_asada,R.drawable.carne_asada, R.string.carne_asada_desc,R.string.sixteen_dollar,  new int[] {R.drawable.dairy_free}),
             new Item(R.string.entrees, R.string.tampiquena, R.drawable.tampiquena, R.string.tampiquena_desc, R.string.sixteen_dollar),
-            new Item(R.string.entrees, R.string.mega_desc, R.drawable.mega_tiacoyo, R.string.mega_desc, R.string.fiften_dollar),
+            new Item(R.string.entrees, R.string.mega_tiacoyo, R.drawable.mega_tiacoyo, R.string.mega_desc, R.string.fiften_dollar),
             new Item(R.string.entrees, R.string.fajitas,R.drawable.fajitas_de_pollo_o_res, R.string.fajitas_desc, R.string.fiften_dollar),
             new Item(R.string.entrees, R.string.milanesa, R.drawable.milanesas, R.string.milanesa_desc, R.string.fiften_dollar, new int[] {R.drawable.dairy_free}),
             new Item(R.string.entrees, R.string.pechuga_en_salsa, R.drawable.pechugas_en_salsa_chipotle, R.string.pechuaga_en_salsa_desc, R.string.fiften_dollar),
@@ -130,6 +130,9 @@ public class Item {
     }
 
     public int getFoodLabelCount() {
+        if (mFoodLabels == null) {
+            return 0;
+        }
         return mFoodLabels.length;
     }
 }
